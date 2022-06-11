@@ -4,7 +4,8 @@ import { openAlertActionCreator, closeAlertActionCreator } from 'store/alert/ale
 //! Константы Action
 export const authAction = {
     SET_USER_DETAILS: 'AUTH.SET_USER_DETAILS',
-    LOGOUT_USER: 'AUTH.LOGOUT_USER'
+    LOGOUT_USER: 'AUTH.LOGOUT_USER',
+    LOADING: 'AUTH.LOADING'
 }
 
 //! Action Creators устанавливаем в стейт данные о пользователе
@@ -14,6 +15,14 @@ export const setUserDetails = (userDetails) => {
         payload: userDetails
     }
 }
+
+//! Loading
+export const setLoading = () => {
+    return {
+        type: authAction.LOADING,
+    }
+}
+
 
 //! Получаем данные пользователя из localStorage и сохраняем в state
 export const userLoginFromStorage = localStorage.getItem('userChat')
@@ -25,7 +34,7 @@ export const loginAction = (user) => async (dispatch, getState) => {
 
     const { showAlertMessage } = getState().alert;
     try {
-
+        dispatch(setLoading());
         const res = await loginApi(user);
         const { userDetails } = res.data;
 
@@ -44,11 +53,12 @@ export const loginAction = (user) => async (dispatch, getState) => {
 
 
 //! Action thunk запрос на сервер на получение регистрации и отправка данных в store
-export const registerAction = (user, history) => async (dispatch, getState) => {
+export const registerAction = (user) => async (dispatch, getState) => {
 
     const { showAlertMessage } = getState().alert;
 
     try {
+        dispatch(setLoading());
         const res = await registerApi(user);
         const { userDetails } = res.data;
         localStorage.setItem('userChat', JSON.stringify(userDetails.token));
@@ -68,6 +78,7 @@ export const registerAction = (user, history) => async (dispatch, getState) => {
 //! Action thunk запрос на сервер на получение профиля и отправка данных в store
 export const getProfileAction = () => async (dispatch) => {
     try {
+        dispatch(setLoading());
         const {data} = await getProfileApi();
 
         //! Dispatch in store

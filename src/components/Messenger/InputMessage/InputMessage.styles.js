@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Fab from '@mui/material/Fab';
 import TelegramIcon from '@mui/icons-material/Telegram';
 
 export const MainContainer = styled.div`
@@ -7,12 +6,13 @@ export const MainContainer = styled.div`
     height: 60px;
     display: flex;
     z-index:100;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     background: #fff;
     padding: 10px;
     border-top: 1px solid #e5e5e5;
     z-index:100;
+    
 `;
 
 export const Input = styled.input`

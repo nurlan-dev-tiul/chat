@@ -3,16 +3,18 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
 import {
+    ModalSxStyles,
     ModalContainer,
-    DialogContainer
+    DialogContainer,
+
 } from './Modal.styles';
 
-export const Modal = ({children, title, open, handleClose, showBtn, handleSend}) => {
+export const Modal = ({children, title, open, handleClose, showBtn, handleSend, fullwidth}) => {
     return (
         <>
             <ModalContainer open={open} onClose={handleClose}>
                 <DialogTitle>{title}</DialogTitle>
-                    <DialogContainer>
+                    <DialogContainer full={fullwidth}>
                         {children}
                     </DialogContainer>
                 {showBtn && <DialogActions>

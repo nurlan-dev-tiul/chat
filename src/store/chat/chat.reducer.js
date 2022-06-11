@@ -3,7 +3,7 @@ import { chatActions } from "./chat.action";
 const initialState = {
     chosenChatDetails: null,
     chatType: null,
-    messages: []
+    messages: [],
 }
 
 export const chatReducer = (state = initialState, action) => {
@@ -13,12 +13,12 @@ export const chatReducer = (state = initialState, action) => {
                 ...state,
                 chosenChatDetails: action.payload,
                 chatType: action.chatType,
-                messages: []
+                messages: [],
             }
         case chatActions.SET_MESSAGES: 
             return{
                 ...state,
-                messages: action.payload
+                messages: action.payload,
             }    
         default:
             return state

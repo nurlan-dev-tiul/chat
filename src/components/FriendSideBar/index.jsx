@@ -119,6 +119,7 @@ export const FriendSideBar = ({openFriendBar, setCloseFriendBar, responseBar}) =
                 open={openMailModal}
                 handleClose={closeModalHandler}
                 handleSend={handleSubmit(sendModalHandler)}
+                fullwidth='true'
                 showBtn
             >
                 <SendMail formState={formState} register={register} />

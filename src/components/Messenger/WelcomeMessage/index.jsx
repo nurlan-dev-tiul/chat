@@ -1,12 +1,10 @@
 import React from 'react';
-import { Wrapper, ImageContainer, Image } from './WelcomeMessage.styles';
+import { Wrapper } from './WelcomeMessage.styles';
 
 export const WelcomeMessage = () => {
     return (
         <Wrapper>
-            <ImageContainer>
-                <Image src='https://cdn.pixabay.com/photo/2015/11/06/15/13/internet-1028794_960_720.jpg' />
-            </ImageContainer>
+            <img style={{width: '200px', height: '200px'}} src='https://cdn.pixabay.com/photo/2016/04/01/11/09/cartoon-1300224_960_720.png' />
         </Wrapper>
     )
 }

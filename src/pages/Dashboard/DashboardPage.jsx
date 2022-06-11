@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Wrapper } from 'styles/pages/Dashboard.styles';
 import { FriendSideBar } from 'components/FriendSideBar';
 import { Messenger } from 'components/Messenger';
@@ -9,11 +9,13 @@ import { SnackBar } from 'components/Snackbar';
 import { logoutAction, setUserDetails } from 'store/authentication/auth.action';
 
 const DashboardPage = () => {
-	const [loading, setLoading] = React.useState(true);
+	const [load, setLoading] = React.useState(true);
     const dispatch = useDispatch();
     const [openFriendBar, setOpenFriendBar] = React.useState(false);
+    const { loading } = useSelector(state => state.auth);
 
     React.useEffect(() => {
+        setLoading(loading)
         const userDetails = localStorage.getItem('userChat');
         const spinner = document.getElementById("spinner");
         if (spinner) {
@@ -31,7 +33,7 @@ const DashboardPage = () => {
         
 
         connectWithSocketServer(JSON.parse(userDetails));
-    }, [dispatch, loading]);
+    }, [dispatch, load, loading]);
 
     const closeFriendBar = () => {
         setOpenFriendBar(false)

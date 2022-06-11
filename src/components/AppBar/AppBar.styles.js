@@ -4,7 +4,7 @@ import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 
 export const MainContainer = styled.div`
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     background-color: white;

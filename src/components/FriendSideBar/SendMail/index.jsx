@@ -1,14 +1,16 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
-import DialogContentText from '@mui/material/DialogContentText';
 import { Typography } from '@mui/material';
+import { 
+    ContentText
+} from './SendMail.styles';
 
 export const SendMail = ({formState, register}) => {
     return (
         <>
-            <DialogContentText>
+            <ContentText>
                     Напишите Email адрес вашего друга, которого хотите пригласить в наш чат
-            </DialogContentText>
+            </ContentText>
             <TextField
                 autoFocus
                 margin="dense"

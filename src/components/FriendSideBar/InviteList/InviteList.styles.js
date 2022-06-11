@@ -14,6 +14,10 @@ export const ListWrapper = styled(List)`
         margin: 0px;
         padding: 0px;
     }
+    
+    @media (max-width: 320px) {
+        width: 100%;
+    }
 `;
 
 export const ButtonContainer = styled.div`
@@ -27,7 +31,7 @@ export const ButtonContainer = styled.div`
 
     @media (max-width: 320px) {
         margin-left: 0px;
-        padding-left: 10px;
+        padding-left: 0px;
     }
 `;
 

@@ -3,7 +3,7 @@
 Демо:  [https://chat-lyart-gamma.vercel.app/](https://chat-lyart-gamma.vercel.app/)
 
 ## Какие технологии используются:
-- React.js
+- React.js (Хуки)
 - Redux
 - Redux-thunk
 - React-hook-form/Yup

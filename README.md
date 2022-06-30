@@ -1,6 +1,6 @@
 # Web Chat
 
-Demo: https://chat-lyart-gamma.vercel.app/
+Демо:  https://chat-lyart-gamma.vercel.app/
 
 ## Какие технологии используются:
 - React.js

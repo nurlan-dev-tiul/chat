@@ -1,6 +1,6 @@
 # Web Chat
 
-Демо:  https://chat-lyart-gamma.vercel.app/
+Демо:  [https://chat-lyart-gamma.vercel.app/](https://chat-lyart-gamma.vercel.app/)
 
 ## Какие технологии используются:
 - React.js
@@ -18,7 +18,7 @@
 - Валидация форм (схема валидации через Yup)
 - Индикаторы онлайн и не в сети
 
-## Тестовый логин-пароль:
+## Логин и пароль:
 ```
 Email: user@mail.ru  
 Пароль: 123456789ww
